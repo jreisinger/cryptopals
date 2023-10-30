@@ -7,7 +7,7 @@ import (
 
 type plaintext struct {
 	key         byte
-	plaintext   string
+	message     string
 	englishness int
 }
 
@@ -19,7 +19,7 @@ func (x byEnglishness) Swap(i, j int)      { x[i], x[j] = x[j], x[i] }
 
 func printPlaintexts(plaintexts []plaintext) {
 	for _, r := range plaintexts {
-		fmt.Printf("(%d) %q -> %q\n", r.englishness, r.key, r.plaintext)
+		fmt.Printf("(%d) %q -> %q\n", r.englishness, r.key, r.message)
 	}
 }
 
@@ -34,7 +34,7 @@ func bruteforce(ciphertext []byte) []plaintext {
 		n := englishness(s)
 		plaintexts = append(plaintexts, plaintext{
 			key:         key,
-			plaintext:   s,
+			message:     s,
 			englishness: n,
 		})
 	}
