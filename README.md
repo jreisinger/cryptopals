@@ -1,5 +1,1 @@
-Solutions to https://cryptopals.com.
-
-```
-go test -v ./...
-```
+Solutions to https://cryptopals.com in Go.
